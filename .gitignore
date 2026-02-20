@@ -9,6 +9,7 @@ Thumbs.db
 
 # Sensitive credentials and connection details
 remote-host.md
+backup-db/
 .env
 .env.*
 *.pem
