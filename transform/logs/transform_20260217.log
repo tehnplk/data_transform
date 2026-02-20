@@ -1,0 +1,309 @@
+[2026-02-17 00:00:01] start
+sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 1059 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 00:00:04] end
+[2026-02-17 00:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 16976 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 00:30:06] end
+[2026-02-17 01:00:01] start
+sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 215 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 01:00:05] end
+[2026-02-17 01:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 01:30:06] end
+[2026-02-17 02:00:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 0 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 02:00:03] end
+[2026-02-17 02:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 02:30:07] end
+[2026-02-17 03:00:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 0 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 03:00:04] end
+[2026-02-17 03:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 03:30:06] end
+[2026-02-17 04:00:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 0 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 04:00:04] end
+[2026-02-17 04:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 04:30:06] end
+[2026-02-17 05:00:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 0 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 05:00:04] end
+[2026-02-17 05:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 05:30:06] end
+[2026-02-17 06:00:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 0 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 0 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 0 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 0 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 0 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 0 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 0 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 0 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 0 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 0 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 0 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 0 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 0 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 06:00:04] end
+[2026-02-17 06:30:01] start
+sync_test: inserted 0 rows from sources ['0_sync_test.sql']
+sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+sync_or_utilization_rate: inserted 0 rows from sources ['11_sync_or_utilization_rate.sql']
+sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+[2026-02-17 06:30:06] end
+[2026-02-17 06:55:37] start
+sync_test: no new data in raw, skipping (existing data preserved)
+sync_bed_an_occupancy: no new data in raw, skipping (existing data preserved)
+sync_bed_type_all: no new data in raw, skipping (existing data preserved)
+sync_critical_wait_bed: no new data in raw, skipping (existing data preserved)
+sync_drgs_rw_top10: no new data in raw, skipping (existing data preserved)
+sync_drgs_sum: no new data in raw, skipping (existing data preserved)
+sync_icu_semi_icu_case_realtime: no new data in raw, skipping (existing data preserved)
+sync_mortality_ami: no new data in raw, skipping (existing data preserved)
+sync_mortality_sepsis: no new data in raw, skipping (existing data preserved)
+sync_normal_ward_death: no new data in raw, skipping (existing data preserved)
+sync_or_utilization_rate: no new data in raw, skipping (existing data preserved)
+sync_refer_paperless: no new data in raw, skipping (existing data preserved)
+sync_refer_top10: no new data in raw, skipping (existing data preserved)
+sync_waiting_time_cataract: no new data in raw, skipping (existing data preserved)
+sync_waiting_time_hernia: no new data in raw, skipping (existing data preserved)
+[2026-02-17 06:55:40] end
+[2026-02-17 07:00:01] start
+sync_test: no new data in raw, skipping (existing data preserved)
+sync_bed_an_occupancy: no new data in raw, skipping (existing data preserved)
+sync_bed_type_all: no new data in raw, skipping (existing data preserved)
+sync_critical_wait_bed: no new data in raw, skipping (existing data preserved)
+sync_drgs_rw_top10: no new data in raw, skipping (existing data preserved)
+sync_drgs_sum: no new data in raw, skipping (existing data preserved)
+sync_icu_semi_icu_case_realtime: no new data in raw, skipping (existing data preserved)
+sync_mortality_ami: no new data in raw, skipping (existing data preserved)
+sync_mortality_sepsis: no new data in raw, skipping (existing data preserved)
+sync_normal_ward_death: no new data in raw, skipping (existing data preserved)
+sync_or_utilization_rate: no new data in raw, skipping (existing data preserved)
+sync_refer_paperless: no new data in raw, skipping (existing data preserved)
+sync_refer_top10: no new data in raw, skipping (existing data preserved)
+sync_waiting_time_cataract: no new data in raw, skipping (existing data preserved)
+sync_waiting_time_hernia: no new data in raw, skipping (existing data preserved)
+[2026-02-17 07:00:05] end
+[2026-02-17 07:30:01] start
+transform_sync_test: no new data in raw, skipping (existing data preserved)
+transform_sync_bed_an_occupancy: inserted 16763 rows from sources ['1_sync_bed_an_occupancy.sql']
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+transform_sync_drgs_rw_top10: no new data in raw, skipping (existing data preserved)
+transform_sync_drgs_sum: no new data in raw, skipping (existing data preserved)
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+Traceback (most recent call last):
+  File "/home/adminplk/transform/10_sync_normal_ward_death.py", line 211, in <module>
+    main()
+  File "/home/adminplk/transform/10_sync_normal_ward_death.py", line 188, in main
+    execute_values(write_cur, insert_sql, all_values, page_size=1000)
+  File "/usr/lib/python3/dist-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.NotNullViolation: null value in column "pdx_name" of relation "transform_sync_normal_ward_death" violates not-null constraint
+DETAIL:  Failing row contains (11252, 2025, N185, null, 4, 2026-02-17 07:22:21+07).
+
+[2026-02-17 11:01:13] start
+transform_sync_test: no new data in raw, skipping (existing data preserved)
+transform_sync_bed_an_occupancy: inserted 440 rows from sources ['1_sync_bed_an_occupancy.sql']
+transform_sync_bed_type_all: no new data in raw, skipping (existing data preserved)
+transform_sync_critical_wait_bed: no new data in raw, skipping (existing data preserved)
+transform_sync_drgs_rw_top10: no new data in raw, skipping (existing data preserved)
+transform_sync_drgs_sum: no new data in raw, skipping (existing data preserved)
+transform_sync_icu_semi_icu_case_realtime: no new data in raw, skipping (existing data preserved)
+transform_sync_mortality_ami: no new data in raw, skipping (existing data preserved)
+transform_sync_mortality_sepsis: no new data in raw, skipping (existing data preserved)
+transform_sync_normal_ward_death: no new data in raw, skipping (existing data preserved)
+transform_sync_or_utilization_rate: no new data in raw, skipping (existing data preserved)
+transform_sync_refer_paperless: no new data in raw, skipping (existing data preserved)
+transform_sync_refer_top10: no new data in raw, skipping (existing data preserved)
+transform_sync_waiting_time_cataract: no new data in raw, skipping (existing data preserved)
+transform_sync_waiting_time_hernia: no new data in raw, skipping (existing data preserved)
+[2026-02-17 11:01:16] end

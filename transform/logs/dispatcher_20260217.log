@@ -1,0 +1,1404 @@
+[2026-02-17 07:48:09] Found pending data for 7 source(s): ['10_sync_normal_ward_death.sql', '11_sync_or_utilization_rate.sql', '12_sync_refer_paperless.sql', '13_sync_refer_top10.sql', '14_sync_waiting_time_cataract.sql', '15_sync_waiting_time_hernia.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 07:48:09]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+Traceback (most recent call last):
+  File "/home/adminplk/transform/10_sync_normal_ward_death.py", line 211, in <module>
+    main()
+  File "/home/adminplk/transform/10_sync_normal_ward_death.py", line 188, in main
+    execute_values(write_cur, insert_sql, all_values, page_size=1000)
+  File "/usr/lib/python3/dist-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.NotNullViolation: null value in column "pdx_name" of relation "transform_sync_normal_ward_death" violates not-null constraint
+DETAIL:  Failing row contains (11252, 2025, N185, null, 4, 2026-02-17 07:22:21+07).
+
+--- End of 10_sync_normal_ward_death.py (exit=1) ---
+[2026-02-17 07:48:10]   ERROR: 10_sync_normal_ward_death.py exited with code 1
+[2026-02-17 07:48:10]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 07:48:10]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 07:48:10]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 07:48:10]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 07:48:10]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 07:48:10]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 07:48:10]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 07:48:10]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 07:48:10]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 07:48:11]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 07:48:11]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 204 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 07:48:11]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 07:48:11] Summary: 6 executed, 0 skipped, 7 total sources
+[2026-02-17 07:50:45] Found pending data for 1 source(s): ['10_sync_normal_ward_death.sql']
+[2026-02-17 07:50:45]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+Traceback (most recent call last):
+  File "/home/adminplk/transform/10_sync_normal_ward_death.py", line 211, in <module>
+    main()
+  File "/home/adminplk/transform/10_sync_normal_ward_death.py", line 188, in main
+    execute_values(write_cur, insert_sql, all_values, page_size=1000)
+  File "/usr/lib/python3/dist-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.InvalidColumnReference: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+--- End of 10_sync_normal_ward_death.py (exit=1) ---
+[2026-02-17 07:50:45]   ERROR: 10_sync_normal_ward_death.py exited with code 1
+[2026-02-17 07:50:45] Summary: 0 executed, 0 skipped, 1 total sources
+[2026-02-17 07:51:59] Found pending data for 1 source(s): ['10_sync_normal_ward_death.sql']
+[2026-02-17 07:51:59]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 07:51:59]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 07:51:59] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 08:00:02] No pending data in raw table. Nothing to do.
+[2026-02-17 08:30:01] Found pending data for 13 source(s): ['14_sync_waiting_time_cataract.sql', '13_sync_refer_top10.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '3_sync_critical_wait_bed.sql', '15_sync_waiting_time_hernia.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '6_sync_icu_semi_icu_case_realtime.sql', '1_sync_bed_an_occupancy.sql', '5_sync_drgs_sum.sql']
+[2026-02-17 08:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 08:30:01]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 08:30:01]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 08:30:01]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 08:30:01]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 08:30:01]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 08:30:01]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 08:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 08:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 08:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 08:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 14483 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 08:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 08:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 08:30:05]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 08:30:05]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 08:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 08:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 08:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 08:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 08:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 08:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 08:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 08:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 08:30:06]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 08:30:06]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 08:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 08:30:06] Summary: 13 executed, 0 skipped, 13 total sources
+[2026-02-17 09:00:01] No pending data in raw table. Nothing to do.
+[2026-02-17 09:27:22] Found pending data for 15 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '0_sync_test.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 09:27:22]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+Traceback (most recent call last):
+  File "/home/adminplk/transform/00_sync_test.py", line 221, in <module>
+    main()
+  File "/home/adminplk/transform/00_sync_test.py", line 198, in main
+    execute_values(write_cur, insert_sql, all_values, page_size=1000)
+  File "/usr/lib/python3/dist-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.NotNullViolation: null value in column "version" of relation "transform_sync_test" violates not-null constraint
+DETAIL:  Failing row contains (11252, null, null).
+
+--- End of 00_sync_test.py (exit=1) ---
+[2026-02-17 09:27:22]   ERROR: 00_sync_test.py exited with code 1
+[2026-02-17 09:27:22]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 09:27:22]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 09:27:22]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 09:27:22]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 09:27:22]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 09:27:23]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 09:27:23]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 09:27:23]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 09:27:23]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 09:27:23]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 09:27:23]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 09:27:23]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 09:27:23]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 6422 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 09:27:24]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 09:27:24]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 228 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 09:27:24]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 09:27:24]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 14 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 09:27:24]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 09:27:24]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 09:27:25]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 09:27:25]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 09:27:25]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 09:27:25]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 09:27:25]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 09:27:25]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 09:27:25]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 09:27:25]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 09:27:25]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 09:27:25] Summary: 14 executed, 0 skipped, 15 total sources
+[2026-02-17 09:28:36] Found pending data for 2 source(s): ['0_sync_test.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 09:28:36]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 2 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 09:28:36]   OK: 00_sync_test.py completed successfully
+[2026-02-17 09:28:36]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 226 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 09:28:36]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 09:28:36] Summary: 2 executed, 0 skipped, 2 total sources
+[2026-02-17 09:30:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 09:30:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 268 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 09:30:02]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 09:30:02] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 10:00:02] Found pending data for 2 source(s): ['1_sync_bed_an_occupancy.sql', '2_sync_bed_type_all.sql']
+[2026-02-17 10:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 10691 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 10:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 10:00:03]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 288 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 10:00:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 10:00:04] Summary: 2 executed, 0 skipped, 2 total sources
+[2026-02-17 10:23:27] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 10:23:27]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 10:23:27]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 10:23:27]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 10:23:27]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 10:23:27]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 10:23:28]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 10:23:28]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 10:23:28]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 10:23:28]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 35 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 10:23:28]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 10:23:28]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 16 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 10:23:28]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 10:23:28]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 3082 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 10:23:29]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 10:23:29]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 10:23:29]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 10:23:29]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 10:23:29]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 10:23:29]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 10:23:30]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 10:23:30]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 10:23:30]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 10:23:30]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 10:23:30]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 10:23:30]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 10:23:30]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 10:23:30]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 10:23:30]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 10:23:30] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 10:30:01] Found pending data for 5 source(s): ['14_sync_waiting_time_cataract.sql', '13_sync_refer_top10.sql', '2_sync_bed_type_all.sql', '1_sync_bed_an_occupancy.sql', '15_sync_waiting_time_hernia.sql']
+[2026-02-17 10:30:01]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 10 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 10:30:01]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 10:30:01]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 18 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 10:30:01]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 10:30:01]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 10:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 10:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 4543 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 10:30:02]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 10:30:02]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 87 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 10:30:03]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 10:30:03] Summary: 5 executed, 0 skipped, 5 total sources
+[2026-02-17 11:00:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 11:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 10681 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 11:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 11:00:03] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 11:05:49] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 11:05:49]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 1700 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 11:05:49]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 11:05:49] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 11:30:01] Found pending data for 15 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '0_sync_test.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 11:30:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 11:30:01]   OK: 00_sync_test.py completed successfully
+[2026-02-17 11:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 11:30:01]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 11:30:01]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 11:30:02]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 11:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 11:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 11:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 11:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 11:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 11:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 11:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 11:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 11:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 11172 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 11:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 11:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 11:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 11:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 11:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 11:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 11:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 11:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 11:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 11:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 11:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 11:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 11:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 11:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 11:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 11:30:06] Summary: 15 executed, 0 skipped, 15 total sources
+[2026-02-17 12:00:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 12:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7252 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 12:00:02]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 12:00:02] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 12:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 12:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 12:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 12:30:02]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 12:30:02]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 12:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 12:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 12:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 12:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 12:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 12:30:03]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 12:30:03]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 12:30:03]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 12:30:03]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 11253 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 12:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 12:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 12:30:05]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 12:30:05]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 12:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 12:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 12:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 12:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 12:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 12:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 12:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 12:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 12:30:06]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 12:30:06]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 12:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 12:30:06] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 13:00:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 13:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7399 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 13:00:02]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 13:00:02] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 13:30:02] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 13:30:02]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 13:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 13:30:02]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 13:30:02]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 13:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 13:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 13:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 13:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 13:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 13:30:03]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 13:30:03]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 13:30:03]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 13:30:03]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 11179 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 13:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 13:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 13:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 13:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 13:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 13:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 13:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 13:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 13:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 13:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 13:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 13:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 13:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 13:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 13:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 13:30:06] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 14:00:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 14:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7384 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 14:00:02]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 14:00:02] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 14:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 14:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 14:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 14:30:02]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 14:30:02]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 14:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 14:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 14:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 14:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 14:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 14:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 14:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 14:30:03]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 14:30:03]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 11186 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 14:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 14:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 14:30:05]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 14:30:05]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 14:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 14:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 14:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 14:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 14:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 14:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 14:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 14:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 14:30:06]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 14:30:06]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 14:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 14:30:06] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 15:00:02] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 15:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7325 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 15:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 15:00:03] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 15:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '11_sync_or_utilization_rate.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 15:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 20 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 15:30:01]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 15:30:01]   RUN: 11_sync_or_utilization_rate.py (source: 11_sync_or_utilization_rate.sql)
+--- Output of 11_sync_or_utilization_rate.py ---
+transform_sync_or_utilization_rate: inserted 13 rows from sources ['11_sync_or_utilization_rate.sql']
+--- End of 11_sync_or_utilization_rate.py (exit=0) ---
+[2026-02-17 15:30:02]   OK: 11_sync_or_utilization_rate.py completed successfully
+[2026-02-17 15:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 51 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 15:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 15:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 30 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 15:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 15:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 53 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 15:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 15:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 48 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 15:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 15:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 11220 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 15:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 15:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 15:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 15:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 15:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 15:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 15:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 15:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 15:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 15:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 15:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 15:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 58 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 15:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 15:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 60 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 15:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 15:30:06] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 16:00:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 16:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7336 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 16:00:02]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 16:00:02] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 16:30:01] Found pending data for 13 source(s): ['14_sync_waiting_time_cataract.sql', '13_sync_refer_top10.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '3_sync_critical_wait_bed.sql', '15_sync_waiting_time_hernia.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '6_sync_icu_semi_icu_case_realtime.sql', '1_sync_bed_an_occupancy.sql', '5_sync_drgs_sum.sql']
+[2026-02-17 16:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 16:30:01]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 16:30:01]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 16:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 16:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 16:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 16:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 16:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 16:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 16:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 16:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8876 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 16:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 16:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 16:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 16:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 16:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 16:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 16:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 16:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 16:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 16:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 16:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 16:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 16:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 16:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 16:30:05]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 16:30:05] Summary: 13 executed, 0 skipped, 13 total sources
+[2026-02-17 17:00:01] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 17:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7207 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 17:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 17:00:03] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 17:30:01] Found pending data for 13 source(s): ['14_sync_waiting_time_cataract.sql', '13_sync_refer_top10.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '3_sync_critical_wait_bed.sql', '15_sync_waiting_time_hernia.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '6_sync_icu_semi_icu_case_realtime.sql', '1_sync_bed_an_occupancy.sql', '5_sync_drgs_sum.sql']
+[2026-02-17 17:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 17:30:01]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 17:30:01]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 17:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 17:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 17:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 17:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 17:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 17:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 17:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 17:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8881 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 17:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 17:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 17:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 17:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 17:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 17:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 17:30:04]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 17:30:04]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 17:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 17:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 17:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 17:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 17:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 17:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 17:30:05]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 17:30:05] Summary: 13 executed, 0 skipped, 13 total sources
+[2026-02-17 18:00:02] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 18:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7212 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 18:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 18:00:03] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 18:30:01] Found pending data for 13 source(s): ['14_sync_waiting_time_cataract.sql', '13_sync_refer_top10.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '3_sync_critical_wait_bed.sql', '15_sync_waiting_time_hernia.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '6_sync_icu_semi_icu_case_realtime.sql', '1_sync_bed_an_occupancy.sql', '5_sync_drgs_sum.sql']
+[2026-02-17 18:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 18:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 18:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 18:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 18:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 18:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 18:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 18:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 18:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 18:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 18:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8831 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 18:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 18:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 18:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 18:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 18:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 18:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 18:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 18:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 18:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 18:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 18:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 18:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 18:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 18:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 18:30:05]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 18:30:05] Summary: 13 executed, 0 skipped, 13 total sources
+[2026-02-17 19:00:02] Found pending data for 1 source(s): ['1_sync_bed_an_occupancy.sql']
+[2026-02-17 19:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7255 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 19:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 19:00:03] Summary: 1 executed, 0 skipped, 1 total sources
+[2026-02-17 19:30:01] Found pending data for 13 source(s): ['14_sync_waiting_time_cataract.sql', '13_sync_refer_top10.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '3_sync_critical_wait_bed.sql', '15_sync_waiting_time_hernia.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '6_sync_icu_semi_icu_case_realtime.sql', '1_sync_bed_an_occupancy.sql', '5_sync_drgs_sum.sql']
+[2026-02-17 19:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 19:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 19:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 19:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 19:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 19:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 19:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 19:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 19:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 19:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 19:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8879 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 19:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 19:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 19:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 19:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 19:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 19:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 19:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 19:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 19:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 19:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 19:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 19:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 19:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 19:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 19:30:05]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 19:30:05] Summary: 13 executed, 0 skipped, 13 total sources
+[2026-02-17 20:00:02] Found pending data for 2 source(s): ['1_sync_bed_an_occupancy.sql', '0_sync_test.sql']
+[2026-02-17 20:00:02]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 20:00:02]   OK: 00_sync_test.py completed successfully
+[2026-02-17 20:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7207 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 20:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 20:00:03] Summary: 2 executed, 0 skipped, 2 total sources
+[2026-02-17 20:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '0_sync_test.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 20:30:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 20:30:02]   OK: 00_sync_test.py completed successfully
+[2026-02-17 20:30:02]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 20:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 20:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 20:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 20:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 20:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 20:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 20:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 20:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 20:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 20:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 9339 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 20:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 20:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 516 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 20:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 20:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 20 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 20:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 20:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 30 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 20:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 20:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 52 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 20:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 20:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 3 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 20:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 20:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 20:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 20:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 20:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 20:30:06] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 21:00:01] Found pending data for 2 source(s): ['1_sync_bed_an_occupancy.sql', '0_sync_test.sql']
+[2026-02-17 21:00:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 21:00:01]   OK: 00_sync_test.py completed successfully
+[2026-02-17 21:00:01]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 9692 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 21:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 21:00:03] Summary: 2 executed, 0 skipped, 2 total sources
+[2026-02-17 21:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '0_sync_test.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 21:30:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 21:30:01]   OK: 00_sync_test.py completed successfully
+[2026-02-17 21:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 21:30:01]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 21:30:01]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 21:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 21:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 21:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 21:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 21:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 21:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 21:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 21:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8888 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 21:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 21:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 21:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 21:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 21:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 21:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 21:30:04]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 21:30:04]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 21:30:04]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 21:30:04]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 21:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 21:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 21:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 21:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 21:30:05]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 21:30:05] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 22:00:01] Found pending data for 2 source(s): ['1_sync_bed_an_occupancy.sql', '0_sync_test.sql']
+[2026-02-17 22:00:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 22:00:02]   OK: 00_sync_test.py completed successfully
+[2026-02-17 22:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7207 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 22:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 22:00:03] Summary: 2 executed, 0 skipped, 2 total sources
+[2026-02-17 22:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '0_sync_test.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 22:30:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 22:30:01]   OK: 00_sync_test.py completed successfully
+[2026-02-17 22:30:01]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 22:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 22:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 22:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 22:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 22:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 22:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 22:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 22:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 22:30:02]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 22:30:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8819 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 22:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 22:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 22:30:04]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 22:30:04]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 22:30:04]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 22:30:04]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 22:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 22:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 22:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 22:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 22:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 22:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 22:30:05]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 22:30:05]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 22:30:05]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 22:30:05] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 23:00:02] Found pending data for 2 source(s): ['1_sync_bed_an_occupancy.sql', '0_sync_test.sql']
+[2026-02-17 23:00:02]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 23:00:02]   OK: 00_sync_test.py completed successfully
+[2026-02-17 23:00:02]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 7267 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 23:00:03]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 23:00:03] Summary: 2 executed, 0 skipped, 2 total sources
+[2026-02-17 23:30:01] Found pending data for 14 source(s): ['14_sync_waiting_time_cataract.sql', '4_sync_drgs_rw_top10.sql', '9_sync_mortality_sepsis.sql', '8_sync_mortality_ami.sql', '15_sync_waiting_time_hernia.sql', '0_sync_test.sql', '6_sync_icu_semi_icu_case_realtime.sql', '5_sync_drgs_sum.sql', '13_sync_refer_top10.sql', '3_sync_critical_wait_bed.sql', '12_sync_refer_paperless.sql', '2_sync_bed_type_all.sql', '10_sync_normal_ward_death.sql', '1_sync_bed_an_occupancy.sql']
+[2026-02-17 23:30:01]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 23:30:02]   OK: 00_sync_test.py completed successfully
+[2026-02-17 23:30:02]   RUN: 10_sync_normal_ward_death.py (source: 10_sync_normal_ward_death.sql)
+--- Output of 10_sync_normal_ward_death.py ---
+transform_sync_normal_ward_death: inserted 10 rows from sources ['10_sync_normal_ward_death.sql']
+--- End of 10_sync_normal_ward_death.py (exit=0) ---
+[2026-02-17 23:30:02]   OK: 10_sync_normal_ward_death.py completed successfully
+[2026-02-17 23:30:02]   RUN: 12_sync_refer_paperless.py (source: 12_sync_refer_paperless.sql)
+--- Output of 12_sync_refer_paperless.py ---
+transform_sync_refer_paperless: inserted 34 rows from sources ['12_sync_refer_paperless.sql']
+--- End of 12_sync_refer_paperless.py (exit=0) ---
+[2026-02-17 23:30:02]   OK: 12_sync_refer_paperless.py completed successfully
+[2026-02-17 23:30:02]   RUN: 13_sync_refer_top10.py (source: 13_sync_refer_top10.sql)
+--- Output of 13_sync_refer_top10.py ---
+transform_sync_refer_top10: inserted 20 rows from sources ['13_sync_refer_top10.sql']
+--- End of 13_sync_refer_top10.py (exit=0) ---
+[2026-02-17 23:30:02]   OK: 13_sync_refer_top10.py completed successfully
+[2026-02-17 23:30:02]   RUN: 14_sync_waiting_time_cataract.py (source: 14_sync_waiting_time_cataract.sql)
+--- Output of 14_sync_waiting_time_cataract.py ---
+transform_sync_waiting_time_cataract: inserted 36 rows from sources ['14_sync_waiting_time_cataract.sql']
+--- End of 14_sync_waiting_time_cataract.py (exit=0) ---
+[2026-02-17 23:30:02]   OK: 14_sync_waiting_time_cataract.py completed successfully
+[2026-02-17 23:30:02]   RUN: 15_sync_waiting_time_hernia.py (source: 15_sync_waiting_time_hernia.sql)
+--- Output of 15_sync_waiting_time_hernia.py ---
+transform_sync_waiting_time_hernia: inserted 32 rows from sources ['15_sync_waiting_time_hernia.sql']
+--- End of 15_sync_waiting_time_hernia.py (exit=0) ---
+[2026-02-17 23:30:03]   OK: 15_sync_waiting_time_hernia.py completed successfully
+[2026-02-17 23:30:03]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 8890 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 23:30:04]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 23:30:04]   RUN: 02_sync_bed_type_all.py (source: 2_sync_bed_type_all.sql)
+--- Output of 02_sync_bed_type_all.py ---
+transform_sync_bed_type_all: inserted 475 rows from sources ['2_sync_bed_type_all.sql']
+--- End of 02_sync_bed_type_all.py (exit=0) ---
+[2026-02-17 23:30:05]   OK: 02_sync_bed_type_all.py completed successfully
+[2026-02-17 23:30:05]   RUN: 03_sync_critical_wait_bed.py (source: 3_sync_critical_wait_bed.sql)
+--- Output of 03_sync_critical_wait_bed.py ---
+transform_sync_critical_wait_bed: inserted 13 rows from sources ['3_sync_critical_wait_bed.sql']
+--- End of 03_sync_critical_wait_bed.py (exit=0) ---
+[2026-02-17 23:30:05]   OK: 03_sync_critical_wait_bed.py completed successfully
+[2026-02-17 23:30:05]   RUN: 04_sync_drgs_rw_top10.py (source: 4_sync_drgs_rw_top10.sql)
+--- Output of 04_sync_drgs_rw_top10.py ---
+transform_sync_drgs_rw_top10: inserted 20 rows from sources ['4_sync_drgs_rw_top10.sql']
+--- End of 04_sync_drgs_rw_top10.py (exit=0) ---
+[2026-02-17 23:30:05]   OK: 04_sync_drgs_rw_top10.py completed successfully
+[2026-02-17 23:30:05]   RUN: 05_sync_drgs_sum.py (source: 5_sync_drgs_sum.sql)
+--- Output of 05_sync_drgs_sum.py ---
+transform_sync_drgs_sum: inserted 34 rows from sources ['5_sync_drgs_sum.sql']
+--- End of 05_sync_drgs_sum.py (exit=0) ---
+[2026-02-17 23:30:05]   OK: 05_sync_drgs_sum.py completed successfully
+[2026-02-17 23:30:05]   RUN: 06_sync_icu_semi_icu_case_realtime.py (source: 6_sync_icu_semi_icu_case_realtime.sql)
+--- Output of 06_sync_icu_semi_icu_case_realtime.py ---
+transform_sync_icu_semi_icu_case_realtime: inserted 2 rows from sources ['6_sync_icu_semi_icu_case_realtime.sql']
+--- End of 06_sync_icu_semi_icu_case_realtime.py (exit=0) ---
+[2026-02-17 23:30:05]   OK: 06_sync_icu_semi_icu_case_realtime.py completed successfully
+[2026-02-17 23:30:05]   RUN: 08_sync_mortality_ami.py (source: 8_sync_mortality_ami.sql)
+--- Output of 08_sync_mortality_ami.py ---
+transform_sync_mortality_ami: inserted 42 rows from sources ['8_sync_mortality_ami.sql']
+--- End of 08_sync_mortality_ami.py (exit=0) ---
+[2026-02-17 23:30:06]   OK: 08_sync_mortality_ami.py completed successfully
+[2026-02-17 23:30:06]   RUN: 09_sync_mortality_sepsis.py (source: 9_sync_mortality_sepsis.sql)
+--- Output of 09_sync_mortality_sepsis.py ---
+transform_sync_mortality_sepsis: inserted 43 rows from sources ['9_sync_mortality_sepsis.sql']
+--- End of 09_sync_mortality_sepsis.py (exit=0) ---
+[2026-02-17 23:30:06]   OK: 09_sync_mortality_sepsis.py completed successfully
+[2026-02-17 23:30:06] Summary: 14 executed, 0 skipped, 14 total sources
+[2026-02-17 23:40:44] Found pending data for 2 source(s): ['1_sync_bed_an_occupancy.sql', '0_sync_test.sql']
+[2026-02-17 23:40:44]   RUN: 00_sync_test.py (source: 0_sync_test.sql)
+--- Output of 00_sync_test.py ---
+transform_sync_test: inserted 1 rows from sources ['0_sync_test.sql']
+--- End of 00_sync_test.py (exit=0) ---
+[2026-02-17 23:40:44]   OK: 00_sync_test.py completed successfully
+[2026-02-17 23:40:44]   RUN: 01_sync_bed_an_occupancy.py (source: 1_sync_bed_an_occupancy.sql)
+--- Output of 01_sync_bed_an_occupancy.py ---
+transform_sync_bed_an_occupancy: inserted 3662 rows from sources ['1_sync_bed_an_occupancy.sql']
+--- End of 01_sync_bed_an_occupancy.py (exit=0) ---
+[2026-02-17 23:40:45]   OK: 01_sync_bed_an_occupancy.py completed successfully
+[2026-02-17 23:40:45] Summary: 2 executed, 0 skipped, 2 total sources
