@@ -117,6 +117,26 @@ async def get_sync_scripts():
         raise HTTPException(status_code=500, detail=f"Failed to read sync scripts: {error}")
 
 
+@app.get("/sync-scripts/{script_name}")
+async def get_single_sync_script(script_name: str):
+    scripts_file = "sync-scripts.json"
+    if not os.path.exists(scripts_file):
+        raise HTTPException(status_code=404, detail="Sync scripts file not found")
+    
+    try:
+        with open(scripts_file, "r", encoding="utf-8") as f:
+            scripts = json.load(f)
+        
+        if script_name not in scripts:
+            raise HTTPException(status_code=404, detail=f"Script '{script_name}' not found")
+            
+        return scripts[script_name]
+    except HTTPException:
+        raise
+    except Exception as error:
+        raise HTTPException(status_code=500, detail=f"Failed to read script: {error}")
+
+
 if __name__ == "__main__":
     import uvicorn
 
