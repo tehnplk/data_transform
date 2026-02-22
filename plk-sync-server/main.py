@@ -1,3 +1,5 @@
+import os
+import json
 from datetime import datetime
 from typing import Any
 
@@ -99,6 +101,20 @@ async def check_last_record():
         }
     except Exception as error:
         raise HTTPException(status_code=500, detail=f"Database query failed: {error}")
+
+
+@app.get("/sync-scripts")
+async def get_sync_scripts():
+    scripts_file = "sync-scripts.json"
+    if not os.path.exists(scripts_file):
+        raise HTTPException(status_code=404, detail="Sync scripts file not found")
+    
+    try:
+        with open(scripts_file, "r", encoding="utf-8") as f:
+            scripts = json.load(f)
+        return scripts
+    except Exception as error:
+        raise HTTPException(status_code=500, detail=f"Failed to read sync scripts: {error}")
 
 
 if __name__ == "__main__":

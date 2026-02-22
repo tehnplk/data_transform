@@ -1,0 +1,66 @@
+{
+    "000_sync_test.sql": {
+        "description": "Test sync script",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, '1.0.4-20260222' as version, NOW() as d_update LIMIT 1;"
+    },
+    "001_sync_bed_an_occupancy.sql": {
+        "description": "hos ส่งข้อมูล --",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode ,UPPER(md5(i.an)) AS an_censored ,a.bedno ,b.export_code ,i.regdate ,i.dchdate ,GREATEST(i.regdate, DATE('2025-01-01')) AS calc_start ,LEAST(i.dchdate, CURDATE()) AS calc_end ,CASE WHEN LEAST(i.dchdate, CURDATE()) >= GREATEST(i.regdate, DATE('2025-01-01')) THEN DATEDIFF(LEAST(i.dchdate, CURDATE()), GREATEST(i.regdate, DATE('2025-01-01'))) + 1 ELSE 0 END AS overlap_days ,NOW() AS d_update FROM ipt i JOIN iptadm a ON a.an = i.an JOIN bedno b ON b.bedno = a.bedno WHERE i.regdate IS NOT NULL AND i.dchdate IS NOT NULL AND i.regdate <= CURDATE() AND i.dchdate >= DATE('2025-01-01') AND b.export_code IS NOT NULL AND TRIM(b.export_code) <> '' ORDER BY i.regdate, i.an;"
+    },
+    "002_sync_bed_type_all.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode ,b.export_code ,b.bedno ,b.bedtype ,b.roomno ,NOW() AS d_update FROM bedno b WHERE b.export_code IS NOT NULL AND TRIM(b.export_code) <> '' AND CHAR_LENGTH(TRIM(b.export_code)) = 6;"
+    },
+    "003_sync_critical_wait_bed.sql": {
+        "description": "Admitted: enter_er_time → ipt.regdate+regtime",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode ,yr ,yr + 543 AS yr_be ,total_cases ,admitted_cases ,refer_out_cases ,avg_wait_min ,ROUND(avg_wait_min / 60.0, 2) AS avg_wait_hours ,avg_admit_wait_min ,ROUND(avg_admit_wait_min / 60.0, 2) AS avg_admit_wait_hr ,avg_refer_wait_min ,ROUND(avg_refer_wait_min / 60.0, 2) AS avg_refer_wait_hr ,pct_over_4hr ,NOW() AS d_update FROM ( SELECT yr ,COUNT(*) AS total_cases ,SUM(CASE WHEN disposition = 'Admitted' THEN 1 ELSE 0 END) AS admitted_cases ,SUM(CASE WHEN disposition = 'Refer Out' THEN 1 ELSE 0 END) AS refer_out_cases ,ROUND(AVG(wait_min), 1) AS avg_wait_min ,ROUND(AVG(CASE WHEN disposition='Admitted' THEN wait_min END), 1) AS avg_admit_wait_min ,ROUND(AVG(CASE WHEN disposition='Refer Out' THEN wait_min END), 1) AS avg_refer_wait_min ,ROUND(SUM(CASE WHEN wait_min > 240 THEN 1 ELSE 0 END)*100.0/COUNT(*), 1) AS pct_over_4hr FROM ( SELECT YEAR(er.vstdate) AS yr ,'Admitted' AS disposition ,TIMESTAMPDIFF(MINUTE, er.enter_er_time, CONCAT(ipt.regdate,' ',ipt.regtime)) AS wait_min FROM er_regist er INNER JOIN ipt ON er.vn = ipt.vn WHERE er.er_emergency_level_id IN (1,2) AND er.er_dch_type = 3 AND er.enter_er_time IS NOT NULL AND ipt.regdate IS NOT NULL AND ipt.regtime IS NOT NULL AND TIMESTAMPDIFF(MINUTE, er.enter_er_time, CONCAT(ipt.regdate,' ',ipt.regtime)) BETWEEN 0 AND 1440 AND YEAR(er.vstdate) >= 2020 UNION ALL SELECT YEAR(er.vstdate) AS yr ,'Refer Out' AS disposition ,TIMESTAMPDIFF(MINUTE, er.enter_er_time, CONCAT(ro.refer_date,' ',ro.refer_time)) AS wait_min FROM er_regist er INNER JOIN referout ro ON er.vn = ro.vn WHERE er.er_emergency_level_id IN (1,2) AND er.er_dch_type = 2 AND er.enter_er_time IS NOT NULL AND ro.refer_date IS NOT NULL AND ro.refer_time IS NOT NULL AND TIMESTAMPDIFF(MINUTE, er.enter_er_time, CONCAT(ro.refer_date,' ',ro.refer_time)) BETWEEN 0 AND 1440 AND YEAR(er.vstdate) >= 2020 ) combined GROUP BY yr ) summary ORDER BY yr DESC;"
+    },
+    "004_sync_drgs_rw_top10.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode ,YEAR(dchdate) AS y ,MONTH(dchdate) AS m ,drg AS drgs_code ,SUM(adjrw) AS sum_adj_rw ,NOW() AS d_update FROM ipt WHERE YEAR(dchdate) = 2026 AND MONTH(dchdate) = 1 GROUP BY YEAR(dchdate), MONTH(dchdate), drg ORDER BY sum_adj_rw DESC LIMIT 10;"
+    },
+    "005_sync_drgs_sum.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode ,YEAR(dchdate) AS y ,MONTH(dchdate) AS m ,COUNT(*) AS num_pt ,SUM(adjrw) AS sum_adjrw ,SUM(adjrw) / NULLIF(COUNT(*), 0) AS cmi ,NOW() AS d_update FROM ipt WHERE dchdate >= '2024-10-01' GROUP BY YEAR(dchdate), MONTH(dchdate) ORDER BY y, m;"
+    },
+    "006_sync_icu_semi_icu_case_realtime.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode ,COUNT(ipt.an) AS icu_case ,NOW() AS d_update FROM ipt LEFT JOIN iptadm ON iptadm.an = ipt.an LEFT JOIN bedno ON bedno.bedno = iptadm.bedno WHERE bedno.export_code IS NOT NULL AND CHAR_LENGTH(TRIM(bedno.export_code)) = 6 AND SUBSTRING(TRIM(bedno.export_code), 4, 1) IN ('2', '3') AND ipt.dchstts IS NULL"
+    },
+    "007_sync_icu_ward_death.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, 2025 AS y, d.icd10 AS pdx, COALESCE(i10.tname, '(ไม่พบชื่อโรค)') AS pdx_name, COUNT(*) AS death_count, NOW() AS d_update FROM ipt i JOIN iptdiag d ON d.an = i.an AND d.diagtype = '1' LEFT JOIN icd101 i10 ON REPLACE(d.icd10, '.', '') = REPLACE(i10.code, '.', '') WHERE i.dchtype IN ('08','09') AND YEAR(i.dchdate) = 2025 AND i.ward = '05' GROUP BY d.icd10, i10.tname ORDER BY death_count DESC LIMIT 10;"
+    },
+    "008_sync_mortality_ami.sql": {
+        "description": "Mortality รายปี: AMI",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, YEAR(i.dchdate) AS discharge_year, COUNT(DISTINCT i.an) AS total_admissions, COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) AS deaths, ROUND( COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) * 100.0 / NULLIF(COUNT(DISTINCT i.an), 0), 2 ) AS mortality_rate_pct, NOW() AS d_update FROM ipt i INNER JOIN iptdiag d ON d.an = i.an WHERE (d.icd10 LIKE 'I21%' OR d.icd10 LIKE 'I22%') AND i.dchdate IS NOT NULL GROUP BY YEAR(i.dchdate) ORDER BY discharge_year;"
+    },
+    "009_sync_mortality_sepsis.sql": {
+        "description": "Mortality รายปี: Sepsis",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, YEAR(i.dchdate) AS discharge_year, COUNT(DISTINCT i.an) AS total_admissions, COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) AS deaths, ROUND( COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) * 100.0 / NULLIF(COUNT(DISTINCT i.an), 0), 2 ) AS mortality_rate_pct, NOW() AS d_update FROM ipt i INNER JOIN iptdiag d ON d.an = i.an WHERE (d.icd10 LIKE 'A40%' OR d.icd10 LIKE 'A41%' OR d.icd10 LIKE 'R652%') AND i.dchdate IS NOT NULL GROUP BY YEAR(i.dchdate) ORDER BY discharge_year;"
+    },
+    "010_sync_normal_ward_death.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, 2025 AS y, d.icd10 AS pdx, COALESCE(i10.tname, '(ไม่พบชื่อโรค)') AS pdx_name, COUNT(*) AS death_count, NOW() AS d_update FROM ipt i JOIN iptdiag d ON d.an = i.an AND d.diagtype = '1' LEFT JOIN icd101 i10 ON REPLACE(d.icd10, '.', '') = REPLACE(i10.code, '.', '') WHERE i.dchtype IN ('08','09') AND YEAR(i.dchdate) = 2025 AND i.ward = '02' GROUP BY d.icd10, i10.tname ORDER BY death_count DESC LIMIT 10;"
+    },
+    "011_sync_or_utilization_rate.sql": {
+        "description": "อัตราการใช้ห้องผ่าตัดรายปี",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, YEAR(enter_date) AS op_year, YEAR(enter_date) + 543 AS op_year_be, COUNT(*) AS total_cases, SUM(TIMESTAMPDIFF(MINUTE, CONCAT(enter_date, ' ', enter_time), CONCAT(leave_date, ' ', leave_time))) AS total_or_minutes, ROUND(SUM(TIMESTAMPDIFF(MINUTE, CONCAT(enter_date, ' ', enter_time), CONCAT(leave_date, ' ', leave_time))) / COUNT(*), 1) AS avg_min_per_case, ROUND(SUM(TIMESTAMPDIFF(MINUTE, CONCAT(enter_date, ' ', enter_time), CONCAT(leave_date, ' ', leave_time))) / 60.0, 1) AS total_or_hours, COUNT(DISTINCT enter_date) AS actual_or_days, COUNT(DISTINCT enter_date) * 480 AS avail_min_1room, ROUND(SUM(TIMESTAMPDIFF(MINUTE, CONCAT(enter_date, ' ', enter_time), CONCAT(leave_date, ' ', leave_time))) * 100.0 / (COUNT(DISTINCT enter_date) * 480), 2) AS util_pct, NOW() AS d_update FROM operation_list WHERE enter_date IS NOT NULL AND enter_time IS NOT NULL AND leave_date IS NOT NULL AND leave_time IS NOT NULL AND TIMESTAMPDIFF(MINUTE, CONCAT(enter_date, ' ', enter_time), CONCAT(leave_date, ' ', leave_time)) > 0 GROUP BY YEAR(enter_date) ORDER BY op_year DESC;"
+    },
+    "012_sync_refer_paperless.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, m.y, m.m, (SELECT COUNT(*) FROM referout r WHERE r.refer_date BETWEEN '2024-10-01' AND CURRENT_DATE AND YEAR(r.refer_date) = m.y AND MONTH(r.refer_date) = m.m) AS refer_out_count, (SELECT COUNT(*) FROM moph_refer mr JOIN referout r2 ON r2.referout_id = mr.referout_id WHERE r2.refer_date BETWEEN '2024-10-01' AND CURRENT_DATE AND YEAR(r2.refer_date) = m.y AND MONTH(r2.refer_date) = m.m) AS moph_refer_count, NOW() AS d_update FROM ( SELECT DISTINCT YEAR(refer_date) AS y, MONTH(refer_date) AS m FROM referout WHERE refer_date BETWEEN '2024-10-01' AND CURRENT_DATE ) m ORDER BY m.y, m.m;"
+    },
+    "013_sync_refer_top10.sql": {
+        "description": "",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, v.pdx AS icd10, i.name AS icd10_name, COUNT(*) AS total_refer, NOW() AS d_update FROM referout r LEFT JOIN vn_stat v ON v.vn = r.vn LEFT JOIN icd101 i ON i.code = v.pdx WHERE r.refer_date BETWEEN '2025-01-01' AND '2025-12-31' and v.pdx is not NULL GROUP BY v.pdx ORDER BY total_refer DESC LIMIT 10;"
+    },
+    "014_sync_waiting_time_cataract.sql": {
+        "description": "Waiting Time รายปี: ต้อกระจก (Cataract)",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, YEAR(oa.vstdate) AS visit_year, COUNT(*) AS total_appointments, ROUND(AVG(DATEDIFF(oa.nextdate, oa.vstdate)), 2) AS avg_wait_days, MIN(DATEDIFF(oa.nextdate, oa.vstdate)) AS min_wait_days, MAX(DATEDIFF(oa.nextdate, oa.vstdate)) AS max_wait_days, ROUND(AVG(DATEDIFF(oa.nextdate, oa.vstdate)) / 7, 1) AS avg_wait_weeks, NOW() AS d_update FROM oapp oa INNER JOIN ovstdiag od ON od.vn = oa.vn WHERE (od.icd10 LIKE 'H25%' OR od.icd10 LIKE 'H26%') AND oa.nextdate IS NOT NULL AND oa.vstdate IS NOT NULL AND DATEDIFF(oa.nextdate, oa.vstdate) >= 0 GROUP BY YEAR(oa.vstdate) ORDER BY visit_year;"
+    },
+    "015_sync_waiting_time_hernia.sql": {
+        "description": "Waiting Time รายปี: ไส้เลื่อน (Hernia)",
+        "sql": "SELECT (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode, YEAR(oa.vstdate) AS visit_year, COUNT(*) AS total_appointments, ROUND(AVG(DATEDIFF(oa.nextdate, oa.vstdate)), 2) AS avg_wait_days, MIN(DATEDIFF(oa.nextdate, oa.vstdate)) AS min_wait_days, MAX(DATEDIFF(oa.nextdate, oa.vstdate)) AS max_wait_days, ROUND(AVG(DATEDIFF(oa.nextdate, oa.vstdate)) / 7, 1) AS avg_wait_weeks, NOW() AS d_update FROM oapp oa INNER JOIN ovstdiag od ON od.vn = oa.vn WHERE (od.icd10 LIKE 'K40%' OR od.icd10 LIKE 'K41%' OR od.icd10 LIKE 'K42%' OR od.icd10 LIKE 'K43%') AND oa.nextdate IS NOT NULL AND oa.vstdate IS NOT NULL AND DATEDIFF(oa.nextdate, oa.vstdate) >= 0 GROUP BY YEAR(oa.vstdate) ORDER BY visit_year;"
+    }
+}
