@@ -105,7 +105,7 @@ async def check_last_record():
 
 @app.get("/sync-scripts")
 async def get_sync_scripts():
-    select_sql = "SELECT script_name, description, sql_content FROM c_scripts ORDER BY script_name;"
+    select_sql = "SELECT id, script_name, description, sql_content, sync_time_dialy, activate FROM c_scripts ORDER BY script_name;"
     try:
         async with get_connection() as conn:
             async with conn.cursor() as cur:
@@ -114,9 +114,12 @@ async def get_sync_scripts():
         
         scripts = {}
         for row in results:
-            scripts[row[0]] = {
-                "description": row[1],
-                "sql": row[2]
+            scripts[row[1]] = {
+                "id": row[0],
+                "description": row[2],
+                "sql": row[3],
+                "sync_time": str(row[4]) if row[4] else None,
+                "activate": row[5]
             }
         return scripts
     except Exception as error:
@@ -125,7 +128,7 @@ async def get_sync_scripts():
 
 @app.get("/sync-scripts/{script_name}")
 async def get_single_sync_script(script_name: str):
-    select_sql = "SELECT script_name, description, sql_content FROM c_scripts WHERE script_name = %s;"
+    select_sql = "SELECT id, script_name, description, sql_content, sync_time_dialy, activate FROM c_scripts WHERE script_name = %s;"
     try:
         async with get_connection() as conn:
             async with conn.cursor() as cur:
@@ -136,8 +139,12 @@ async def get_single_sync_script(script_name: str):
             raise HTTPException(status_code=404, detail=f"Script '{script_name}' not found")
             
         return {
-            "description": result[1],
-            "sql": result[2]
+            "id": result[0],
+            "script_name": result[1],
+            "description": result[2],
+            "sql": result[3],
+            "sync_time": str(result[4]) if result[4] else None,
+            "activate": result[5]
         }
     except HTTPException:
         raise
