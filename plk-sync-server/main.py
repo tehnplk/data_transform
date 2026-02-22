@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from psycopg.types.json import Json
 
@@ -136,18 +137,22 @@ async def get_single_sync_script(script_name: str):
                 result = await cur.fetchone()
         
         if not result:
-            raise HTTPException(status_code=404, detail=f"Script '{script_name}' not found")
+            return JSONResponse(
+                status_code=404,
+                content={"message": f"Script '{script_name}' not found", "data": None}
+            )
             
         return {
-            "id": result[0],
-            "script_name": result[1],
-            "description": result[2],
-            "sql": result[3],
-            "sync_time": str(result[4]) if result[4] else None,
-            "activate": result[5]
+            "message": "Script found",
+            "data": {
+                "id": result[0],
+                "script_name": result[1],
+                "description": result[2],
+                "sql": result[3],
+                "sync_time": str(result[4]) if result[4] else None,
+                "activate": result[5]
+            }
         }
-    except HTTPException:
-        raise
     except Exception as error:
         raise HTTPException(status_code=500, detail=f"Database query failed: {error}")
 
