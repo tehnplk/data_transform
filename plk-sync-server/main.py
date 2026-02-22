@@ -105,36 +105,44 @@ async def check_last_record():
 
 @app.get("/sync-scripts")
 async def get_sync_scripts():
-    scripts_file = "sync-scripts.json"
-    if not os.path.exists(scripts_file):
-        raise HTTPException(status_code=404, detail="Sync scripts file not found")
-    
+    select_sql = "SELECT script_name, description, sql_content FROM c_scripts ORDER BY script_name;"
     try:
-        with open(scripts_file, "r", encoding="utf-8") as f:
-            scripts = json.load(f)
+        async with get_connection() as conn:
+            async with conn.cursor() as cur:
+                await cur.execute(select_sql)
+                results = await cur.fetchall()
+        
+        scripts = {}
+        for row in results:
+            scripts[row[0]] = {
+                "description": row[1],
+                "sql": row[2]
+            }
         return scripts
     except Exception as error:
-        raise HTTPException(status_code=500, detail=f"Failed to read sync scripts: {error}")
+        raise HTTPException(status_code=500, detail=f"Database query failed: {error}")
 
 
 @app.get("/sync-scripts/{script_name}")
 async def get_single_sync_script(script_name: str):
-    scripts_file = "sync-scripts.json"
-    if not os.path.exists(scripts_file):
-        raise HTTPException(status_code=404, detail="Sync scripts file not found")
-    
+    select_sql = "SELECT script_name, description, sql_content FROM c_scripts WHERE script_name = %s;"
     try:
-        with open(scripts_file, "r", encoding="utf-8") as f:
-            scripts = json.load(f)
+        async with get_connection() as conn:
+            async with conn.cursor() as cur:
+                await cur.execute(select_sql, (script_name,))
+                result = await cur.fetchone()
         
-        if script_name not in scripts:
+        if not result:
             raise HTTPException(status_code=404, detail=f"Script '{script_name}' not found")
             
-        return scripts[script_name]
+        return {
+            "description": result[1],
+            "sql": result[2]
+        }
     except HTTPException:
         raise
     except Exception as error:
-        raise HTTPException(status_code=500, detail=f"Failed to read script: {error}")
+        raise HTTPException(status_code=500, detail=f"Database query failed: {error}")
 
 
 if __name__ == "__main__":
