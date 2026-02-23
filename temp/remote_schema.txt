@@ -1,0 +1,42 @@
+ c_bed_type_std|code|character
+ c_bed_type_std|name|character varying
+ c_drgs_63|dc|text
+ c_drgs_63|drgname|text
+ c_drgs_63|drg|text
+ c_drgs_63|mdc|text
+ c_drgs_63|mdf|numeric
+ c_drgs_63|ot|numeric
+ c_drgs_63|rw0d|numeric
+ c_drgs_63|rw|numeric
+ c_drgs_63|wtlos|numeric
+ c_hos|amp_code|character varying
+ c_hos|beds|integer
+ c_hos|gps|character varying
+ c_hos|hoscode|character varying
+ c_hos|hosname_short|character varying
+ c_hos|hosname|character varying
+ c_hos|hossize|character varying
+ c_hos|hostype|character varying
+ c_hos|sap_level|character varying
+ c_hos|size_level|character varying
+ c_icd10|active_status|character varying
+ c_icd10|code3|character varying
+ c_icd10|code4|character varying
+ c_icd10|code5|character varying
+ c_icd10|code|character varying
+ c_icd10|hos_guid_ext|character varying
+ c_icd10|icd10compat|character varying
+ c_icd10|icd10tmcompat|character varying
+ c_icd10|ipd_valid|character varying
+ c_icd10|name|character varying
+ c_icd10|sex|character varying
+ c_icd10|spclty|character varying
+ c_icd10|tname|character varying
+ c_scripts|activate|boolean
+ c_scripts|created_at|timestamp without time zone
+ c_scripts|description|text
+ c_scripts|id|integer
+ c_scripts|script_name|text
+ c_scripts|sql_content|text
+ c_scripts|sync_time_dialy|time without time zone
+

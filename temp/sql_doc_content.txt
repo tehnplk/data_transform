@@ -1,0 +1,145 @@
+ ### 000_sync_test.sql                                         +
+                                                               +
+ **Description:** Test sync script                             +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 001_sync_bed_an_occupancy.sql                             +
+                                                               +
+ **Description:** hos ส่งข้อมูล --                                +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 002_sync_bed_type_all.sql                                 +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 003_sync_critical_wait_bed.sql                            +
+                                                               +
+ **Description:** Admitted: enter_er_time → ipt.regdate+regtime+
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 004_sync_drgs_rw_top10.sql                                +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 005_sync_drgs_sum.sql                                     +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 006_sync_icu_semi_icu_case_realtime.sql                   +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 007_sync_icu_ward_death.sql                               +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 008_sync_mortality_ami.sql                                +
+                                                               +
+ **Description:** Mortality รายปี: AMI                          +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 009_sync_mortality_sepsis.sql                             +
+                                                               +
+ **Description:** Mortality รายปี: Sepsis                       +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 010_sync_normal_ward_death.sql                            +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 011_sync_or_utilization_rate.sql                          +
+                                                               +
+ **Description:** อัตราการใช้ห้องผ่าตัดรายปี                         +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 012_sync_refer_paperless.sql                              +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 013_sync_refer_top10.sql                                  +
+                                                               +
+ **Description:**                                              +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 014_sync_waiting_time_cataract.sql                        +
+                                                               +
+ **Description:** Waiting Time รายปี: ต้อกระจก (Cataract)        +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+ ### 015_sync_waiting_time_hernia.sql                          +
+                                                               +
+ **Description:** Waiting Time รายปี: ไส้เลื่อน (Hernia)           +
+ **Status:** Active                                            +
+                                                               +
+ #### SQL Query:                                               +
+                                                               +
+                                                               +
+ ---
+
