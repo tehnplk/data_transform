@@ -50,7 +50,10 @@ env.bak/
 venv.bak/
 
 # Agent/AI framework generic
-.agent/
+.agent/*
+!.agent/skills/
+.agent/skills/*
+!.agent/skills/hosxp/
 .agents/
 _agent/
 _agents/
