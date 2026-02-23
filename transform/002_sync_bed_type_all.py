@@ -5,8 +5,8 @@ import psycopg2
 from psycopg2 import sql
 from psycopg2.extras import execute_values, register_default_jsonb
 
-TABLE_NAME = "transform_sync_bed_an_occupancy"
-SOURCES = ['1_sync_bed_an_occupancy.sql']
+TABLE_NAME = "transform_sync_bed_type_all"
+SOURCES = ['002_sync_bed_type_all.sql']
 
 DB_CONFIG = {
     "host": "127.0.0.1",
@@ -123,7 +123,18 @@ def main():
 
             # Step 1: Read from raw FIRST and dedupe in memory
             all_values = []
-            for source in SOURCES:
+            
+            # Find all sources that match the base name (ignoring prefix digits)
+            base_names = [s.split('_', 1)[-1] if '_' in s else s for s in SOURCES]
+            read_cur.execute(
+                "SELECT DISTINCT source FROM raw "
+                "WHERE (source = ANY(%s) OR source LIKE ANY(%s)) "
+                "AND transform_datetime IS NULL",
+                (base_names, [f'%_{bn}' for bn in base_names])
+            )
+            actual_sources = [r[0] for r in read_cur.fetchall()]
+            
+            for source in actual_sources:
                 best = {}
                 read_cur.execute("SELECT hoscode, payload FROM raw WHERE source=%s AND transform_datetime IS NULL", (source,))
                 while True:
@@ -201,12 +212,12 @@ def main():
                 write_cur.execute(
                     "UPDATE raw SET transform_datetime = now() "
                     "WHERE source = ANY(%s) AND transform_datetime IS NULL",
-                    (SOURCES,),
+                    (actual_sources,),
                 )
 
 
 
-                print(f"{TABLE_NAME}: inserted {len(all_values)} rows from sources {SOURCES}")
+                print(f"{TABLE_NAME}: inserted {len(all_values)} rows from sources {actual_sources}")
             else:
                 print(f"{TABLE_NAME}: no new data in raw, skipping (existing data preserved)")
 
