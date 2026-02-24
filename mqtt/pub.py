@@ -35,25 +35,14 @@ def main():
         source = "sync_dental_monthly"
         sql = """SELECT
     (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode,
-    YEAR(i.dchdate) AS discharge_year,
-    COUNT(DISTINCT i.an) AS total_admissions,
-    COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) AS deaths,
-    ROUND(
-        COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) * 100.0
-        / NULLIF(COUNT(DISTINCT i.an), 0), 2
-    ) AS mortality_rate_pct,
-    SUM(i.adjrw) AS total_adjrw,
-    ROUND(SUM(i.adjrw) / NULLIF(COUNT(DISTINCT i.an), 0), 4) AS cmi,
+    YEAR(vstdate) AS y,
+    MONTH(vstdate) AS m,
+    COUNT(DISTINCT vn) AS visit,
     NOW() AS d_update
-FROM ipt i
-INNER JOIN iptdiag d ON d.an = i.an
-WHERE
-    (d.icd10 LIKE 'I21%' OR d.icd10 LIKE 'I22%'
-     OR d.icd10 LIKE 'A40%' OR d.icd10 LIKE 'A41%')
-    AND i.dchdate IS NOT NULL
-    AND YEAR(i.dchdate) >= 2023
-GROUP BY YEAR(i.dchdate)
-ORDER BY discharge_year DESC;"""
+FROM dtmain
+WHERE vstdate BETWEEN '2025-01-01' AND '2026-12-31'
+GROUP BY YEAR(vstdate), MONTH(vstdate)
+ORDER BY y, m;"""
 
         payload = json.dumps({
             "source": source,
