@@ -1,10 +1,11 @@
+import json
 import time
 import paho.mqtt.client as mqtt
 
 # ข้อมูลการเชื่อมต่อ Broker (ใช้ IP ภายในเครื่อง Server)
 BROKER = "76.13.182.35"
 PORT = 1883
-TOPIC = "test/message"
+TOPIC = "sync/custom"
 USER = "hosplk"
 PASS = "112233"
 
@@ -31,16 +32,41 @@ def main():
     time.sleep(1)
 
     try:
-        count = 1
-        while True:
-            msg = f"Hello MQTT! This is message number #{count}"
-            print(f"📤 Publishing -> Topic: '{TOPIC}', Message: '{msg}'")
-            
-            # ส่งข้อความ
-            client.publish(TOPIC, msg)
-            
-            count += 1
-            time.sleep(2)  # ส่งทุกๆ 2 วินาที
+        sql = """SELECT
+    (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode,
+    YEAR(i.dchdate) AS discharge_year,
+    COUNT(DISTINCT i.an) AS total_admissions,
+    COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) AS deaths,
+    ROUND(
+        COUNT(DISTINCT CASE WHEN i.dchstts = '09' THEN i.an END) * 100.0
+        / NULLIF(COUNT(DISTINCT i.an), 0), 2
+    ) AS mortality_rate_pct,
+    SUM(i.adjrw) AS total_adjrw,
+    ROUND(SUM(i.adjrw) / NULLIF(COUNT(DISTINCT i.an), 0), 4) AS cmi,
+    NOW() AS d_update
+FROM ipt i
+INNER JOIN iptdiag d ON d.an = i.an
+WHERE
+    (d.icd10 LIKE 'I21%' OR d.icd10 LIKE 'I22%'
+     OR d.icd10 LIKE 'A40%' OR d.icd10 LIKE 'A41%')
+    AND i.dchdate IS NOT NULL
+    AND YEAR(i.dchdate) >= 2023
+GROUP BY YEAR(i.dchdate)
+ORDER BY discharge_year DESC;"""
+
+        payload = json.dumps({
+            "source": "sync_custom_data",
+            "sql": sql
+        }, ensure_ascii=False)
+
+        msg = payload
+        print(f"📤 Publishing -> Topic: '{TOPIC}', Message: '{msg}'")
+        
+        # ส่งข้อความ
+        client.publish(TOPIC, msg)
+        
+        # รอให้รับคำสั่งจบ เพื่อให้มั่นใจว่า Publish ถูกส่งออกไปแล้ว
+        time.sleep(1)
 
     except KeyboardInterrupt:
         print("\n🛑 Stopping Publisher...")

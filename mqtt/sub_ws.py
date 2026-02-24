@@ -2,18 +2,23 @@ import time
 import paho.mqtt.client as mqtt
 
 # ข้อมูลการเชื่อมต่อ Broker (ใช้ IP ภายในเครื่อง Server)
-BROKER = "76.13.182.35"
+BROKER = "61.19.112.242"
 PORT = 9001  # <--- เปลี่ยนเป็น Port 9001 (WebSocket)
 TOPIC = "test/websocket_message"
 USER = "hosplk"
 PASS = "112233"
 
+is_first_connect = True
+
 # กำหนด Callback เมื่อทำการเชื่อมต่อสำเร็จ
 def on_connect(client, userdata, flags, rc, properties=None):
+    global is_first_connect
     if rc == 0:
-        print(f"✅ Subscriber connected to MQTT Broker via WebSocket at {BROKER}:{PORT}")
-        # พอเชื่อมต่อสำเร็จปุ๊บ สั่ง Subscribe ในหัวข้อที่สนใจทันที
-        print(f"📡 Subscribing to Topic: '{TOPIC}'...")
+        if is_first_connect:
+            print(f"✅ Subscriber connected to MQTT Broker via WebSocket at {BROKER}:{PORT}")
+            # พอเชื่อมต่อสำเร็จปุ๊บ สั่ง Subscribe ในหัวข้อที่สนใจทันที
+            print(f"📡 Subscribing to Topic: '{TOPIC}'...")
+            is_first_connect = False
         client.subscribe(TOPIC)
     else:
         print(f"❌ Failed to connect, return code {rc}")

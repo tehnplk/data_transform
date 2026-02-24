@@ -1,19 +1,25 @@
+import json
 import time
 import paho.mqtt.client as mqtt
 
 # ข้อมูลการเชื่อมต่อ Broker (ใช้ IP ภายในเครื่อง Server)
 BROKER = "76.13.182.35"
 PORT = 1883
-TOPIC = "test/message"
+TOPIC = "sync/custom"
 USER = "hosplk"
 PASS = "112233"
 
+is_first_connect = True
+
 # กำหนด Callback เมื่อทำการเชื่อมต่อสำเร็จ
 def on_connect(client, userdata, flags, rc, properties=None):
+    global is_first_connect
     if rc == 0:
-        print(f"✅ Subscriber connected to MQTT Broker at {BROKER}:{PORT}")
-        # พอเชื่อมต่อสำเร็จปุ๊บ สั่ง Subscribe ในหัวข้อที่สนใจทันที
-        print(f"📡 Subscribing to Topic: '{TOPIC}'...")
+        if is_first_connect:
+            print(f"✅ Subscriber connected to MQTT Broker at {BROKER}:{PORT}")
+            # พอเชื่อมต่อสำเร็จปุ๊บ สั่ง Subscribe ในหัวข้อที่สนใจทันที
+            print(f"📡 Subscribing to Topic: '{TOPIC}'...")
+            is_first_connect = False
         client.subscribe(TOPIC)
     else:
         print(f"❌ Failed to connect, return code {rc}")
@@ -21,9 +27,14 @@ def on_connect(client, userdata, flags, rc, properties=None):
 # กำหนด Callback ฟังก์ชันรอรับข้อความ
 def on_message(client, userdata, msg):
     payload_str = msg.payload.decode("utf-8")
-    print(f"📩 ----------------------")
-    print(f"🎯 Received Message on Topic: [{msg.topic}]")
-    print(f"📝 Payload: {payload_str}")
+    print(f"\n📩 ----------------------")
+    print(f"🎯 Topic: [{msg.topic}]")
+    try:
+        data = json.loads(payload_str)
+        print(f"📦 Source : {data.get('source', '-')}")
+        print(f"📝 SQL    :\n{data.get('sql', payload_str)}")
+    except json.JSONDecodeError:
+        print(f"📝 Payload: {payload_str}")
     print(f"------------------------")
 
 def main():
