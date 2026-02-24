@@ -124,6 +124,7 @@
 | `13_sync_refer_top10.py`                | `13_sync_refer_top10.sql`               | `transform_sync_refer_top10`                | hoscode, icd10, icd10_name, total_refer                                                                                                                                                    |
 | `14_sync_waiting_time_cataract.py`      | `14_sync_waiting_time_cataract.sql`     | `transform_sync_waiting_time_cataract`      | hoscode, visit_year, total_appointments, avg_wait_days, min_wait_days, max_wait_days, avg_wait_weeks                                                                                       |
 | `15_sync_waiting_time_hernia.py`        | `15_sync_waiting_time_hernia.sql`       | `transform_sync_waiting_time_hernia`        | hoscode, visit_year, total_appointments, avg_wait_days, min_wait_days, max_wait_days, avg_wait_weeks                                                                                       |
+| `016_dental_monthly_transform.py`       | `sync_dental_monthly`                   | `transform_sync_dental_monthly`             | hoscode, y, m                                                                                                                                                                              |
 
 ---
 
@@ -208,4 +209,4 @@ tail -50 ~/transform/logs/transform_$(date +%Y%m%d).log
 
 ---
 
-_Last updated: 2026-02-17_
+_Last updated: 2026-02-24_
