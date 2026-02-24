@@ -46,17 +46,12 @@ plink -ssh sa@ip_addr -P 2233 -pw "MyP@ssw0rd"
 > **หมายเหตุ:** เมื่อเชื่อมต่อครั้งแรก plink จะถาม "Store key in cache? (y/n)"
 > ให้ตอบ `y` และกด Enter Keyboard เพื่อบันทึก host key
 
-### 1.2 เชื่อมต่อแบบรันคำสั่งเดียว
+### 1.2 ห้ามเชื่อมต่อแบบรันคำสั่งเดียว ให้เชื่อมต่อ ssh ค้างไว้แล้วรันคำสั่งที่ ssh terminal เดิม หากมีความจำเป็นให้ใช้คำสั่งเดียว ให้ทำตามตัวอย่างนี้
 
 ```powershell
-# รันคำสั่ง ls แล้วดูผลลัพธ์
-plink -ssh sa@ip_addr -P 2233 -pw "MyP@ssw0rd" "ls -la"
+# รันคำสั่งแล้วดูผลลัพธ์เลย
+plink -ssh -batch sa@ip_addr -P 2233 -pw "MyP@ssw0rd" "linux command"
 
-# เช็ค uptime
-plink -ssh sa@ip_addr -P 2233 -pw "MyP@ssw0rd" "uptime"
-
-# เช็ค disk space
-plink -ssh sa@ip_addr -P 2233 -pw "MyP@ssw0rd" "df -h"
 ```
 
 ### 1.3 เชื่อมต่อด้วย SSH Key (แนะนำ)
