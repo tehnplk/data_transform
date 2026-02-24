@@ -32,6 +32,7 @@ def main():
     time.sleep(1)
 
     try:
+        source = "sync_dental_monthly"
         sql = """SELECT
     (SELECT hospitalcode FROM opdconfig LIMIT 1) AS hoscode,
     YEAR(i.dchdate) AS discharge_year,
@@ -55,7 +56,7 @@ GROUP BY YEAR(i.dchdate)
 ORDER BY discharge_year DESC;"""
 
         payload = json.dumps({
-            "source": "sync_custom_data",
+            "source": source,
             "sql": sql
         }, ensure_ascii=False)
 
