@@ -2,9 +2,11 @@ import time
 import paho.mqtt.client as mqtt
 
 # ข้อมูลการเชื่อมต่อ Broker (ใช้ IP ภายในเครื่อง Server)
-BROKER = "192.168.200.242"
+BROKER = "76.13.182.35"
 PORT = 1883
 TOPIC = "test/message"
+USER = "hosplk"
+PASS = "112233"
 
 # กำหนด Callback เมื่อทำการเชื่อมต่อสำเร็จ
 def on_connect(client, userdata, flags, rc, properties=None):
@@ -33,6 +35,7 @@ def main():
     client.on_message = on_message
 
     print(f"🔄 Connecting Subscriber to {BROKER}...")
+    client.username_pw_set(USER, PASS)
     client.connect(BROKER, PORT, 60)
     
     try:
