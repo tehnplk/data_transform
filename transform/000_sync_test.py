@@ -118,7 +118,20 @@ def main():
                 return
             col_names = [c[0] for c in columns]
             col_types = {c[0]: c[1] for c in columns}
-            dedupe_indexes = [idx for idx, col in enumerate(col_names) if col not in IGNORE_DEDUPE_COLS]
+            
+            # Fetch actual PK columns from database schema for correct deduplication
+            write_cur.execute("""
+                SELECT a.attname
+                FROM pg_index i
+                JOIN pg_attribute a ON a.attrelid = i.indrelid AND a.attnum = ANY(i.indkey)
+                WHERE i.indrelid = %s::regclass AND i.indisprimary
+                ORDER BY array_position(i.indkey, a.attnum)
+            """, (TABLE_NAME,))
+            pk_cols = [r[0] for r in write_cur.fetchall()]
+            if not pk_cols:
+                pk_cols = [c for c in col_names if c != "d_update"]
+                
+            dedupe_indexes = [idx for idx, col in enumerate(col_names) if col in pk_cols]
             d_update_idx = col_names.index("d_update") if "d_update" in col_names else None
 
             # Step 1: Read from raw FIRST and dedupe in memory
@@ -134,8 +147,8 @@ def main():
             )
             actual_sources = [r[0] for r in read_cur.fetchall()]
             
+            best = {}
             for source in actual_sources:
-                best = {}
                 read_cur.execute("SELECT hoscode, payload FROM raw WHERE source=%s AND transform_datetime IS NULL", (source,))
                 while True:
                     rows = read_cur.fetchmany(BATCH_SIZE)
@@ -165,21 +178,10 @@ def main():
                             cur_dt = current[d_update_idx]
                             if is_newer(new_dt, cur_dt):
                                 best[key] = row
-                all_values.extend(best.values())
+            all_values.extend(best.values())
 
             # Step 2: UPSERT - INSERT new data or UPDATE existing
             if all_values:
-                # Get actual PK columns from database schema
-                write_cur.execute("""
-                    SELECT a.attname
-                    FROM pg_index i
-                    JOIN pg_attribute a ON a.attrelid = i.indrelid AND a.attnum = ANY(i.indkey)
-                    WHERE i.indrelid = %s::regclass AND i.indisprimary
-                    ORDER BY array_position(i.indkey, a.attnum)
-                """, (TABLE_NAME,))
-                pk_cols = [r[0] for r in write_cur.fetchall()]
-                if not pk_cols:
-                    pk_cols = [c for c in col_names if c != "d_update"]
                 update_cols = [c for c in col_names if c not in pk_cols]
 
                 conflict_clause = sql.SQL(", ").join(map(sql.Identifier, pk_cols))
